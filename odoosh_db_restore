@@ -1,0 +1,45 @@
+db restoration
+
+paste the downloaded zip file inside a new folder - created for that project
+unzip [zip_file (yourodoopartner-nutrifresh16-test-8336734_2023-06-07_064431_exact_fs.zip)]
+createdb db_name (nutrifresh16-test)(then exit psql \q)
+psql db_name (nutrifresh16-test) < dump.sql
+psql db_name (nutrifresh16-test)
+update ir_cron set active=false;
+update ir_mail_server set active=false;
+update res_users set password='admin' where login='admin';
+update res_users set password='admin',login='admin',active=True where id=2;
+\q
+mv filestore db_name (nutrifresh16-test)
+cp -r db_name (nutrifresh16-test) /home/broadtech/.local/share/Odoo/filestore
+run locally
+
+db expiry
+
+
+update ir_config_parameter set value='2026-07-26 00:00:00' where key='database.expiration_date';
+
+update res_users set password='admin',login='admin',active=True where id=35;
+
+
+ip address vech file send
+--------------------------------
+scp -r [data ulla file path] broadtech@192.168.10.55(ip address of the laptop to send):/home/broadtech(aych kodkknavarkk eth lap il ahn varndath)
+
+
+select id,login from res_users;
+
+which user admin
+-----------------------
+SELECT id, login, active
+FROM res_users
+ORDER BY id;
+
+update res_users set password='admin',login='admin',active=True where id=35;
+
+master pw kittan vendi odoo path il ninn purath home il vannit rm -.odoorc command, alnkil home il ninn thanne .odoorc remove cheythal mathi
+
+update res_users set password='admin',login='admin',active=True where id=1;
+UPDATE res_partner
+SET email = 'admin'
+WHERE id = (SELECT partner_id FROM res_users WHERE id = 1);

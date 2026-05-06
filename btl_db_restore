@@ -1,0 +1,44 @@
+btl db restore
+--------------------
+createdb -p 5433 btl_usa_march_4_2026
+psql -p 5433 btl_usa_march_4_2026 < btl_production_24eb26.sql
+psql -p 5433 btl_usa_march_4_2026
+update ir_cron set active=false;
+update ir_mail_server set active=false;
+truncate table support_credentials;
+update res_users set oauth_uid = NULL;
+\q
+
+btlnetcalive_may5-26.sql.7z (7z file zip extract cheyan:7z x btlnetcalive_may5-26.sql.7z)
+
+git commit time
+----------------------
+git branch 
+o/p: stage main
+git checkout main
+git pull
+changes added after
+git add .
+git status
+git commit -m "aaa"
+git push
+git log
+
+clean file acess
+-----------------------
+
+cd Desktop/clean/BTL_CAD_FEB10_2026
+
+sudo chmod 775 clean.sh 
+
+
+
+filestore pw usa: psqlPasBtlusa
+Immediate Execution of SQL Commands After BTL Production Database Restoration (ee mail il query adikknm db restore ayaen shesham ennit login cheyavu ullu)
+
+filestore pw cad: $%^&*U@De36161
+
+root@broadtech:/home/broadtech/.local/share/Odoo/filestore# chown -R broadtech:broadtech btl_2025_april24
+athyath ith use cheyunnath acess error crrct akknaan
+
+sudo chmod 775 clean.sh : clean access permission
